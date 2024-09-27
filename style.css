@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Reset and base styles  */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+    text-decoration: none;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+	font-weight: inherit;
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+	font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.app {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: #1c1c1c;
+    width: 430px;
+    height: 720px;
+    position: relative;
+}
+
+header {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 16px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav a {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0px 8px;
+    background-color: blue;
+    width: 80px;
+    border-radius: 8px;
+    height: 80px;
+}
+
+header nav a img {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 8px;
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+}
+
+main header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+main header .auth__box button{
+    font-weight: 600;
+    background-color: blue;
+    color: #fff;
+    padding: 8px;
+    font-size: 18px;
+    line-height: 18px;
+    border-radius: 8px;
+    height: 36px;
+}
+
+main .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+main .content .habbits__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1c;
+    position: relative;
+    overflow-y: scroll;
+    padding: 8px;
+}
+
+main .content .habbits__list::-webkit-scrollbar {
+    width: 6px;               /* ширина scrollbar */
+}
+main .content .habbits__list::-webkit-scrollbar-track {
+    background: #1c1c1c;        /* цвет дорожки */
+}
+main .content .habbits__list::-webkit-scrollbar-thumb {
+    border-radius: 20px;       /* закругления плашки */
+    border: 1px solid #fff;  /* padding вокруг плашки */
+}
+
+main .content .habbits__list .habbit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    width: 100%;
+    background-color: #fff;
+    height: 96px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.habbit .habbit__info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+}
+
+.habbit .habbit__info .name {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.habbit .habbit__info .progress__info {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.habbit .habbit__info .progress__info p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.habbit .habbit__info .progress__info span {
+    z-index: 1;
+    height: 16px;
+    position: relative;
+    width: 70%;
+    margin: 0px 4px 0px 4px;
+    border-radius: 4px;
+    background-color: #1c1c1c;
+}
+
+.habbit .habbit__info .progress__info span::after {
+    content: '';
+    border-radius: 4px;
+    z-index: 3;
+    background-color: #4ecb35;
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    width: 80%;
+}
+
+
+.habbit button {
+    height: 100%;
+    margin: 0px 0px 0px 8px;
+    width: 30%;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #4ecb35;
+}
+
+.habbit button img {
+    width: 100%;
+    height: 100%;
+}
+
+.logo p{
+    color: #fff;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 36px;
+}
+
