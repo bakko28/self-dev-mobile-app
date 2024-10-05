@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <p class="use_mobile">Use your mobile</p>
     <div class="app">
         <main>
             <header>
-                <a href="" class="logo"><p>selfDev.</p></a>
-                <div class="auth__box">
-                    <button>SIGN IN</button>
+                <a href="" class="logo">
+                    <div class="logo_text">
+                        <p class="name-text">RunHabbits</p>
+                        <p class="version-text">v1.0.0</p>
+                    </div>
+                </a>
+                <div class="user_box">
+                    <button><img src="img/user-svgrepo-com.svg" alt=""></button>
                 </div>
             </header>
             <div class="content">
+                <p class="head-text">Your Habbits</p>
                 <div class="habbits__list">
                     <div class="habbit">
                         <div class="habbit__info">
@@ -26,21 +33,30 @@
                                 <p>31 day</p>
                             </div>
                         </div>
-                        <button class="done-habbit">
-                            <img src="img/ok.png" alt="">
-                        </button>
+                    </div>
+                    <div class="add_new_habbit">
+                        <p>+</p>
                     </div>
                 </div>
             </div>
         </main>
         <header>
             <nav>
-                <a href="#"><img src="img/links.png" alt=""></a>
-                <a href="#"><img src="img/links.png" alt=""></a>
-                <a href="#"><img src="img/links.png" alt=""></a>
-                <a href="#"><img src="img/links.png" alt=""></a>
+                <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
+                <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
+                <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
+                <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
             </nav>
         </header>
+        <div class="add_new_habbit_form">
+            <form action="submit" id="habbitForm">
+                <p>Название привычки</p>
+                <input type="text" class="habbit-name">
+                <p>Количество дней</p>
+                <input type="number" class="habbit-count">
+                <button type="submit" class="done-habbit-btn">Поставить цель</button>
+            </form>
+        </div>
     </div>
 
     <script src="app.js"></script>

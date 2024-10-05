@@ -94,199 +94,315 @@ body {
     font-family: "IBM Plex Sans", sans-serif;
     height: 100vh;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
-}
-
-.app {
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
     background-color: #1c1c1c;
-    width: 430px;
-    height: 720px;
-    position: relative;
-}
-
-header {
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 16px;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-header nav a {
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    margin: 0px 8px;
-    background-color: blue;
-    width: 80px;
-    border-radius: 8px;
-    height: 80px;
-}
-
-header nav a img {
-    width: 100%;
-    height: 100%;
-}
-
-main {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    padding: 8px;
-    width: 100%;
-    height: 85%;
     overflow: hidden;
 }
 
-main header {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px;
-    margin-bottom: 16px;
+.app {
+    display: none;
 }
 
-main header .auth__box button{
-    font-weight: 600;
-    background-color: blue;
+.use_mobile {
     color: #fff;
-    padding: 8px;
-    font-size: 18px;
-    line-height: 18px;
-    border-radius: 8px;
-    height: 36px;
-}
-
-main .content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-main .content .habbits__list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    width: 100%;
-    height: 100%;
-    background-color: #1c1c1c;
-    position: relative;
-    overflow-y: scroll;
-    padding: 8px;
-}
-
-main .content .habbits__list::-webkit-scrollbar {
-    width: 6px;               /* ширина scrollbar */
-}
-main .content .habbits__list::-webkit-scrollbar-track {
-    background: #1c1c1c;        /* цвет дорожки */
-}
-main .content .habbits__list::-webkit-scrollbar-thumb {
-    border-radius: 20px;       /* закругления плашки */
-    border: 1px solid #fff;  /* padding вокруг плашки */
-}
-
-main .content .habbits__list .habbit {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px;
-    width: 100%;
-    background-color: #fff;
-    height: 96px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-}
-
-.habbit .habbit__info {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    padding: 8px;
-}
-
-.habbit .habbit__info .name {
+    font-size: 48px;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 24px;
-    margin-bottom: 8px;
 }
 
-.habbit .habbit__info .progress__info {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
-}
+@media (max-width: 560px) {
+    .use_mobile {
+        display: none;
+    }
 
-.habbit .habbit__info .progress__info p {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 18px;
-}
+    .app {
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #1c1c1c;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
 
-.habbit .habbit__info .progress__info span {
-    z-index: 1;
-    height: 16px;
-    position: relative;
-    width: 70%;
-    margin: 0px 4px 0px 4px;
-    border-radius: 4px;
-    background-color: #1c1c1c;
-}
+    header {
+        background-color: #292929;
+        padding: 16px 8px;
+        border-radius: 16px 16px 0px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 16px;
+    }
+    
+    header nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    header nav a {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        margin: 0px 8px;
+        background-color: #373737;
+        width: 100%;
+        border-radius: 8px;
+        height: 64px;
+    }
+    
+    header nav a img {
+        height: 100%;
+    }
+    
+    main {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        height: 85%;
+        overflow: hidden;
+    }
+    
+    main header {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        border-radius: 0px 0px 16px 16px;
+        margin:0px 0px 16px 0px;
+    }
+    
+    main header .user_box button{
+        height: 64px;
+        padding: 8px;
+        background-color: #373737;
+        border-radius: 8px;
+    }
 
-.habbit .habbit__info .progress__info span::after {
-    content: '';
-    border-radius: 4px;
-    z-index: 3;
-    background-color: #4ecb35;
-    position: absolute;
-    height: 100%;
-    left: 0px;
-    width: 80%;
-}
+    main header .user_box button img {
+        height: 100%;   
+    }
+    
+    main .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0px 24px;
+    }
 
+    main .content .head-text {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+    
+    main .content .habbits__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        height: 100%;
+        background-color: #1c1c1c;
+        position: relative;
+        overflow-y: scroll;
+    }
+    
+    main .content .habbits__list::-webkit-scrollbar {
+        width: 6px;               /* ширина scrollbar */
+    }
+    main .content .habbits__list::-webkit-scrollbar-track {
+        background: #1c1c1c;        /* цвет дорожки */
+    }
+    main .content .habbits__list::-webkit-scrollbar-thumb {
+        border-radius: 20px;       /* закругления плашки */
+        border: 1px solid #fff;  /* padding вокруг плашки */
+    }
+    
+    main .content .habbits__list .habbit {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        height: 96px;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
 
-.habbit button {
-    height: 100%;
-    margin: 0px 0px 0px 8px;
-    width: 30%;
-    padding: 8px;
-    border-radius: 4px;
-    background-color: #4ecb35;
-}
+    .add_new_habbit_form {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        justify-content: end;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: #00000098;
+    }
 
-.habbit button img {
-    width: 100%;
-    height: 100%;
-}
+    .add_new_habbit_form form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: end;
+        padding: 24px;
+        border-radius: 16px 16px 0px 0px;
+        width: 100%;
+        background-color: #1c1c1c;
+        z-index: 101;
+    }
 
-.logo p{
-    color: #fff;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 36px;
+    .add_new_habbit_form form p {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .add_new_habbit_form form input {
+        border-radius: 8px;
+        padding: 8px;
+        width: 100%;
+        height: 48px;
+        background-color: #292929;
+        color: #fff;
+        margin: 4px 0px 8px 0px;
+    }
+
+    .add_new_habbit_form form button {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin-top: 16px;
+        width: 100%;
+        height: 64px;
+        background-color: #59c33c;
+    }
+
+    main .content .habbits__list .add_new_habbit {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        height: 96px;
+        width: 100%;
+        background-color: transparent;
+        border: 3px #59c33c solid;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        font-size: 48px;
+        color: #59c33c;
+    }
+    
+    .habbit .habbit__info {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 100%;
+        padding: 8px;
+    }
+    
+    .habbit .habbit__info .name {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 24px;
+        margin-bottom: 8px;
+    }
+    
+    .habbit .habbit__info .progress__info {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    .habbit .habbit__info .progress__info p {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+    
+    .habbit .habbit__info .progress__info span {
+        z-index: 1;
+        height: 16px;
+        position: relative;
+        width: calc(100% - 90px);
+        margin: 0px 8px 0px 8px;
+        border-radius: 4px;
+        background-color: #1c1c1c;
+    }
+    
+    .habbit .habbit__info .progress__info span::after {
+        content: '';
+        border-radius: 4px;
+        z-index: 3;
+        background-color: #4ecb35;
+        position: absolute;
+        height: 100%;
+        left: 0px;
+        width: 80%;
+    }
+
+    .habbit .done-habbit {
+        height: 64px;
+        width: 64px;
+        padding: 8px;
+        border-radius: 4px;
+        background-color: #4ecb35;
+    }
+    
+    .habbit .done-habbit img {
+        width: 100%;
+    }
+
+    .logo {
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    .logo .logo_text {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+    
+    .logo .logo_text .name-text{
+        color: #fff;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    .logo .logo_text .version-text{
+        color: #515151;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+    }
 }
 
