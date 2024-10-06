@@ -1,13 +1,13 @@
 window.Telegram.WebApp.ready();
 window.Telegram.WebApp.expand();
 
-const user = window.Telegram.WebApp.initDataUnsafe.user;
+const user = window.Telegram.WebApp.initDataUnsafe ? window.Telegram.WebApp.initDataUnsafe.user : null;
 
 if (!user) {
     console.warn('User is empty or undefined.');
-    return
+    return;
 } else {
-    document.querySelector('.name-text').textContent = `${user.first_name}`
+    document.querySelector('.name-text').textContent = `${user.first_name}`;
 }
 
 let initData = window.Telegram.WebApp.initData || '';
