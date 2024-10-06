@@ -1,21 +1,21 @@
-window.Telegram.WebApp.ready();
-window.Telegram.WebApp.expand();
+// window.Telegram.WebApp.ready();
+// window.Telegram.WebApp.expand();
 
-const user = window.Telegram.WebApp.initDataUnsafe ? window.Telegram.WebApp.initDataUnsafe.user : null;
+// const user = window.Telegram.WebApp.initDataUnsafe ? window.Telegram.WebApp.initDataUnsafe.user : null;
 
-if (!user) {
-    console.warn('User is empty or undefined.');
-    return;
-} else {
-    document.querySelector('.name-text').textContent = `${user.first_name}`;
-}
+// if (!user) {
+//     console.warn('User is empty or undefined.');
+//     return;
+// } else {
+//     document.querySelector('.name-text').textContent = `${user.first_name}`;
+// }
 
-let initData = window.Telegram.WebApp.initData || '';
+// let initData = window.Telegram.WebApp.initData || '';
 
-if (!initData) {
-    console.warn('Init data is empty or undefined.');
-    return;
-}
+// if (!initData) {
+//     console.warn('Init data is empty or undefined.');
+//     return;
+// }
 
 let db;
 let request = indexedDB.open("myDatabase", 1);
