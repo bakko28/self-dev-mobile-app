@@ -42,8 +42,8 @@
         </main>
         <header>
             <nav>
-                <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
-                <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
+                <a href="index.html" alt="habit"><img src="img/exercism-svgrepo-com.svg" alt=""></a>
+                <a href="pages/trello.html"><img src="img/trello-svgrepo-com.svg" alt=""></a>
                 <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
                 <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
             </nav>
@@ -59,9 +59,20 @@
         </div>
         <div class="habit_page">
             <div class="habit_info" id="habitPage">
-                <div class="text-box">
-                    <p alt="Название привычки" class="habit-page-name">Habbit #1</p>
-                    <p class="habit-page-start-time">Start: 06.10.2024</p>    
+                <div class="edit-mode">
+                    <input type="text" class="edit-name">
+                    <input type="number" class="edit-count">
+                    <button class="done-edit">Подтвердить изменения</button>
+                </div>
+                <div class="head_box">
+                    <div class="text-box">
+                        <p alt="Название привычки" class="habit-page-name">Habbit #1</p>
+                        <p class="habit-page-start-time">Start: 06.10.2024</p>    
+                    </div>
+                    <div class="buttons-box">
+                        <button alt="Изменить" class="edit-button"><img src="img/edit-2-svgrepo-com.svg" alt=""></button>
+                        <button alt="Удалить" class="delete-button"><img src="img/trash-bin-trash-svgrepo-com.svg" alt=""></button>
+                    </div>
                 </div>
                 <div class="progres-bar">
                     <div class="progresbar">
@@ -73,6 +84,7 @@
         </div>
     </div>
 
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
