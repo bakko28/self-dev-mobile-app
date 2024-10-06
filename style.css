@@ -209,7 +209,7 @@ body {
         margin-bottom: 16px;
     }
     
-    main .content .habbits__list {
+    main .content .habits__list {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -221,18 +221,18 @@ body {
         overflow-y: scroll;
     }
     
-    main .content .habbits__list::-webkit-scrollbar {
+    main .content .habits__list::-webkit-scrollbar {
         width: 6px;               /* ширина scrollbar */
     }
-    main .content .habbits__list::-webkit-scrollbar-track {
+    main .content .habits__list::-webkit-scrollbar-track {
         background: #1c1c1c;        /* цвет дорожки */
     }
-    main .content .habbits__list::-webkit-scrollbar-thumb {
+    main .content .habits__list::-webkit-scrollbar-thumb {
         border-radius: 20px;       /* закругления плашки */
         border: 1px solid #fff;  /* padding вокруг плашки */
     }
     
-    main .content .habbits__list .habbit {
+    main .content .habits__list .habit {
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -245,7 +245,7 @@ body {
         margin-bottom: 8px;
     }
 
-    .add_new_habbit_form {
+    .add_new_habit_form {
         display: none;
         flex-direction: column;
         align-items: center;
@@ -258,7 +258,7 @@ body {
         background-color: #00000098;
     }
 
-    .add_new_habbit_form form {
+    .add_new_habit_form form {
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -270,13 +270,13 @@ body {
         z-index: 101;
     }
 
-    .add_new_habbit_form form p {
+    .add_new_habit_form form p {
         color: #fff;
         font-size: 24px;
         font-weight: 400;
     }
 
-    .add_new_habbit_form form input {
+    .add_new_habit_form form input {
         border-radius: 8px;
         padding: 8px;
         width: 100%;
@@ -286,7 +286,7 @@ body {
         margin: 4px 0px 8px 0px;
     }
 
-    .add_new_habbit_form form button {
+    .add_new_habit_form form button {
         color: #fff;
         font-size: 24px;
         font-weight: 500;
@@ -300,7 +300,7 @@ body {
         background-color: #59c33c;
     }
 
-    main .content .habbits__list .add_new_habbit {
+    main .content .habits__list .add_new_habit {
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -316,7 +316,7 @@ body {
         color: #59c33c;
     }
     
-    .habbit .habbit__info {
+    .habit .habit__info {
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -326,27 +326,27 @@ body {
         padding: 8px;
     }
     
-    .habbit .habbit__info .name {
+    .habit .habit__info .name {
         font-weight: 500;
         font-size: 28px;
         line-height: 24px;
         margin-bottom: 8px;
     }
     
-    .habbit .habbit__info .progress__info {
+    .habit .habit__info .progress__info {
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: start;
     }
     
-    .habbit .habbit__info .progress__info p {
+    .habit .habit__info .progress__info p {
         font-size: 18px;
         font-weight: 500;
         line-height: 18px;
     }
     
-    .habbit .habbit__info .progress__info span {
+    .habit .habit__info .progress__info span {
         z-index: 1;
         height: 16px;
         position: relative;
@@ -356,10 +356,10 @@ body {
         background-color: #1c1c1c;
     }
     
-    .habbit .habbit__info .progress__info span::after {
+    .habit .habit__info .progress__info span::after {
         content: '';
         border-radius: 4px;
-        z-index: 3;
+        z-index: 2;
         background-color: #4ecb35;
         position: absolute;
         height: 100%;
@@ -367,15 +367,7 @@ body {
         width: 80%;
     }
 
-    .habbit .done-habbit {
-        height: 64px;
-        width: 64px;
-        padding: 8px;
-        border-radius: 4px;
-        background-color: #4ecb35;
-    }
-    
-    .habbit .done-habbit img {
+    .habit .done-habit img {
         width: 100%;
     }
 
@@ -404,5 +396,101 @@ body {
         font-size: 18px;
         line-height: 24px;
     }
+
+    .habit_page {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        justify-content: end;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: #00000098;
+    }
+
+    .habit_page .habit_info {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        padding: 24px;
+        border-radius: 16px 16px 0px 0px;
+        width: 100%;
+        height: 60%;
+        background-color: #1c1c1c;
+        z-index: 101;
+    }
+
+    .habit_page .habit_info .done-habit-btn {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin-top: 16px;
+        width: 100%;
+        height: 64px;
+        background-color: #59c33c;
+    }
+
+    .habit_page .habit_info .habit-page-name {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    .habit_page .habit_info .habit-page-start-time {
+        color: #373737;
+        margin-bottom: 16px;
+    }
+
+    .habit_page .habit_info .progres-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .progresbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 101;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: #373737;
+    }
+
+    .progresbar p {
+        padding: 8px;
+        line-height: 48px;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 48px;
+        z-index: 103;
+    }
+    
+    .progresbar::after {
+        content: '';
+        z-index: 102;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: #59c33c;
+    }
+    
 }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habbits</title>
+    <title>Habits</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,10 +11,10 @@
     <div class="app">
         <main>
             <header>
-                <a href="" class="logo">
+                <a href="index.html" class="logo">
                     <div class="logo_text">
-                        <p class="name-text">RunHabbits</p>
-                        <p class="version-text">v1.0.0</p>
+                        <p class="name-text">HabitHero</p>
+                        <p class="version-text">v2.1.0</p>
                     </div>
                 </a>
                 <div class="user_box">
@@ -22,11 +22,11 @@
                 </div>
             </header>
             <div class="content">
-                <p class="head-text">Your Habbits</p>
-                <div class="habbits__list">
-                    <div class="habbit">
-                        <div class="habbit__info">
-                            <p class="name">Habbit #1</p>
+                <p class="head-text">Your Habits</p>
+                <div class="habits__list">
+                    <div class="habit">
+                        <div class="habit__info">
+                            <p class="name">Habit #1</p>
                             <div class="progress__info">
                                 <p>0</p>
                                 <span class="progress-line"></span>
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="add_new_habbit">
+                    <div class="add_new_habit">
                         <p>+</p>
                     </div>
                 </div>
@@ -48,14 +48,28 @@
                 <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
             </nav>
         </header>
-        <div class="add_new_habbit_form">
-            <form action="submit" id="habbitForm">
+        <div class="add_new_habit_form">
+            <form action="submit" id="habitForm">
                 <p>Название привычки</p>
-                <input type="text" class="habbit-name">
+                <input type="text" class="habit-name">
                 <p>Количество дней</p>
-                <input type="number" class="habbit-count">
-                <button type="submit" class="done-habbit-btn">Поставить цель</button>
+                <input type="number" class="habit-count">
+                <button type="submit" class="create-habit-btn">Поставить цель</button>
             </form>
+        </div>
+        <div class="habit_page">
+            <div class="habit_info" id="habitPage">
+                <div class="text-box">
+                    <p alt="Название привычки" class="habit-page-name">Habbit #1</p>
+                    <p class="habit-page-start-time">Start: 06.10.2024</p>    
+                </div>
+                <div class="progres-bar">
+                    <div class="progresbar">
+                        <p>132</p>
+                    </div>
+                </div>
+                <button class="done-habit-btn">Выполнил привычку</button>
+            </div>
         </div>
     </div>
 
