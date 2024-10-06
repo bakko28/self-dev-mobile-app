@@ -1,3 +1,135 @@
+window.Telegram.WebApp.ready();
+window.Telegram.WebApp.expand();
+
+const user = window.Telegram.WebApp.initDataUnsafe.user;
+
+if (!user) {
+    console.warn('User is empty or undefined.');
+    return
+} else {
+    document.querySelector('.name-text').textContent = `${user.first_name}`
+}
+
+let initData = window.Telegram.WebApp.initData || '';
+
+if (!initData) {
+    console.warn('Init data is empty or undefined.');
+    return;
+}
+
+let db;
+let request = indexedDB.open("myDatabase", 1);
+
+request.onerror = function(event) {
+    console.error("Ошибка при открытии базы данных:", event.target.errorCode);
+};
+
+request.onsuccess = function(event) {
+    db = event.target.result;
+    console.log("База данных открыта успешно");
+
+    // addUser("bakko28", "example_pass"); Добавление
+    // deleteUser("bakko28"); Удаление
+
+    // Список всех пользователей
+    getAllUsers(); 
+};
+
+request.onupgradeneeded = function(event) {
+    let db = event.target.result;
+    let objectStore = db.createObjectStore("users", { keyPath: "id", autoIncrement: true });
+    objectStore.createIndex("username", "username", { unique: true });
+    objectStore.createIndex("password", "password", { unique: false });
+    console.log("Хранилище объектов создано");
+};
+
+function addUser(username, password) {
+    if (!db) {
+        console.error("База данных не инициализирована");
+        return;
+    }
+
+    let transaction = db.transaction(["users"], "readwrite");
+    let objectStore = transaction.objectStore("users");
+
+    let request = objectStore.add({ username: username, password: password });
+
+    request.onsuccess = function(event) {
+        console.log("Пользователь добавлен");
+    };
+
+    request.onerror = function(event) {
+        console.error("Ошибка при добавлении пользователя:", event.target.errorCode);
+    };
+}
+
+function getAllUsers() {
+    if (!db) {
+        console.error("База данных не инициализирована");
+        return;
+    }
+
+    let transaction = db.transaction(["users"], "readonly");
+    let objectStore = transaction.objectStore("users");
+
+    let request = objectStore.getAll();
+
+    request.onsuccess = function(event) {
+        console.log("Пользователи:", event.target.result);
+    };
+
+    request.onerror = function(event) {
+        console.error("Ошибка при чтении данных:", event.target.errorCode);
+    };
+}
+
+function deleteUser(username) {
+    if (!db) {
+        console.error("База данных не инициализирована");
+        return;
+    }
+
+    let transaction = db.transaction(["users"], "readwrite");
+    let objectStore = transaction.objectStore("users");
+
+    // Ищем пользователя по имени
+    let index = objectStore.index("username");
+    let request = index.get(username);
+
+    request.onsuccess = function(event) {
+        let user = event.target.result;
+        if (user) {
+            // Удаляем пользователя по id
+            let deleteRequest = objectStore.delete(user.id);
+
+            deleteRequest.onsuccess = function(event) {
+                console.log("Пользователь удалён");
+            };
+
+            deleteRequest.onerror = function(event) {
+                console.error("Ошибка при удалении пользователя:", event.target.errorCode);
+            };
+        } else {
+            console.log("Пользователь не найден");
+        }
+    };
+
+    request.onerror = function(event) {
+        console.error("Ошибка при поиске пользователя:", event.target.errorCode);
+    };
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const addNewHabitBtn = document.querySelector('.add_new_habit');
