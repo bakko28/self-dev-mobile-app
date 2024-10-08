@@ -110,30 +110,111 @@ function deleteUser(username) {
 
 
 
-let tg = window.Telegram.WebApp;
-tg.ready();
-tg.expand();
+// let tg = window.Telegram.WebApp;
+// tg.ready();
+// tg.expand();
 
 
-const user = tg.initDataUnsafe ? tg.initDataUnsafe.user : null;
+// const user = tg.initDataUnsafe ? tg.initDataUnsafe.user : null;
 
-if (!user) {
-    console.warn('User is empty or undefined.');
-    return;
-} else {
-    document.querySelector('.name-text').textContent = `${user.first_name}`;
-}
+// if (!user) {
+//     console.warn('User is empty or undefined.');
+//     return;
+// } else {
+//     document.querySelector('.name-text').textContent = `${user.first_name}`;
+// }
 
-let initData = tg.initData || '';
+// let initData = tg.initData || '';
 
-if (!initData) {
-    console.warn('Init data is empty or undefined.');
-    return;
-}
+// if (!initData) {
+//     console.warn('Init data is empty or undefined.');
+//     return;
+// }
 
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    const userBtn = document.querySelector('.user-btn')
+
+    if(userBtn) {
+        userBtn.addEventListener('click', openUserMenu)
+    } else {
+        console.warn('UserBtn not found')
+    }
+
+    function handleClickOutsideUserPage(event) {
+        const userPage = document.querySelector('.user_page');
+        const displayValue = window.getComputedStyle(userPage).display;
+        console.log('Display value:', displayValue);
+
+        if (displayValue === 'flex') {
+            let page = document.getElementById('userPage');
+            let isClickInside = page.contains(event.target);
+
+            if (!isClickInside) {
+                userPage.style.display = 'none';
+                console.log('Clicked outside, page hidden');
+                document.removeEventListener('click', handleClickOutsideUserPage);
+            }
+        }
+    }
+
+    function openUserMenu() {
+        const userPage = document.querySelector('.user_page')
+        if (userPage) {
+            console.log('Element found:', userPage);
+            userPage.style.display = 'flex';
+            console.log('Display set to flex');
+
+            setTimeout(() => {
+                document.addEventListener('click', handleClickOutsideUserPage);
+            }, 0);
+        } else {
+            console.log('Element not found');
+        }
+    }
+    const buySubscribeBtn = document.querySelector('.buy-sub-btn');
+
+    if (buySubscribeBtn) {
+        buySubscribeBtn.addEventListener('click', openBuySubscribeMenu)
+    } else {
+        console.warn('BuySubscribeBtn not found');
+    }
+    
+    function handleClickOutsideBuySubscribePage(event) {
+        const buySubscribePage = document.querySelector('.buy-subscibe_page'); // Исправлено на правильный класс
+        const displayValueSub = window.getComputedStyle(buySubscribePage).display;
+        console.log('Display value:', displayValueSub);
+    
+        if (displayValueSub === 'flex') {
+            let page = document.getElementById('buySubscribePage');
+            let isClickInside = page.contains(event.target);
+    
+            if (!isClickInside) {
+                buySubscribePage.style.display = 'none';
+                console.log('Clicked outside, page hidden');
+                document.removeEventListener('click', handleClickOutsideBuySubscribePage);
+            }
+        }
+    }
+    
+    function openBuySubscribeMenu() {
+        const buySubPage = document.querySelector('.buy-subscibe_page');
+        if (buySubPage) {
+            console.log('Element found:', buySubPage);
+            buySubPage.style.display = 'flex';
+            console.log('Display set to flex');
+    
+            setTimeout(() => {
+                document.addEventListener('click', handleClickOutsideBuySubscribePage);
+            }, 0);
+        } else {
+            console.log('Element not found');
+        }
+    }
+    
+
     const addNewHabitBtn = document.querySelector('.add_new_habit');
 
     if (addNewHabitBtn) {
@@ -290,5 +371,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Код для рендеринга привычки
     }
 
+    const colors = ['#A98307', '#FF2800', '#93AA00', '#40826D', '#45433B', '#8E402A', '#CD853F', '#003153', '#C76864'];
 
+    function getRandomColor(colors) {
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        let color = colors[randomIndex];
+
+        const userBackground = document.querySelector('.user-avatar')
+
+        if (userBackground) {
+            console.log(color)
+            userBackground.style.backgroundColor = `${color}`
+        } else {
+            console.warn('UserBackground not found')
+        }
+    }
+
+    getRandomColor(colors)
 });

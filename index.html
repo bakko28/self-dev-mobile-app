@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habits</title>
+    <title>HabitHero</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
                     </div>
                 </a>
                 <div class="user_box">
-                    <button><img src="img/user-svgrepo-com.svg" alt=""></button>
+                    <button class="user-btn"><img src="img/user-svgrepo-com.svg" alt=""></button>
                 </div>
             </header>
             <div class="content">
@@ -42,10 +42,10 @@
         </main>
         <header>
             <nav>
-                <a href="index.html" alt="habit"><img src="img/exercism-svgrepo-com.svg" alt=""></a>
+                <a href="index.html" alt="habit" class="active"><img src="img/exercism-svgrepo-com.svg" alt=""></a>
                 <a href="pages/trello.html"><img src="img/trello-svgrepo-com.svg" alt=""></a>
-                <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
-                <a href="#"><img src="img/link-alt-1-svgrepo-com.svg" alt=""></a>
+                <a href="pages/character.html"><img src="img/mask-happly-svgrepo-com.svg" alt=""></a>
+                <a href="pages/setting.html"><img src="img/setting-2-svgrepo-com.svg" alt=""></a>
             </nav>
         </header>
         <div class="add_new_habit_form">
@@ -80,6 +80,21 @@
                     </div>
                 </div>
                 <button class="done-habit-btn">Выполнил привычку</button>
+            </div>
+        </div>
+        <div class="user_page">
+            <div class="user_info" id="userPage">
+                    <div class="balance">
+                        <p>Баланс:</p>
+                        <div class="coins">
+                            <img src="img/thunder-svgrepo-com.svg" alt="">
+                            <p>600</p>
+                        </div>
+                    </div>
+                    <a href="#" class="promocode-btn">🎁 Активировать промокод</a>
+                    <a href="#" class="invite-friend-btn">🧙‍♂️ Пригласить друга</a>
+                    <a href="pages/character.html" >💰 Купить подписку</a>
+                    <a href="#" class="search-bag-btn">⚠️ Сообщить о проблеме</a>
             </div>
         </div>
     </div>

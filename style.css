@@ -159,6 +159,11 @@ body {
         border-radius: 8px;
         height: 64px;
     }
+
+    header nav .active {
+        padding: 8px;
+        background-color: #515151;
+    }
     
     header nav a img {
         height: 100%;
@@ -185,6 +190,8 @@ body {
     }
     
     main header .user_box button{
+        position: relative;
+        z-index: 110;
         height: 64px;
         padding: 8px;
         background-color: #373737;
@@ -578,6 +585,259 @@ body {
         margin-top: 16px;
         height: 64px;
         background-color: #59c33c;
+    }
+
+    .user_page {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        justify-content: end;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: #00000098;
+    } 
+
+    .user_page .user_info {
+        z-index: 112;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding: 8px;
+        position: absolute;
+        top: 80px;
+        border-radius: 8px 0px 8px 8px;
+        right: 16px;
+        background-color: #373737;
+    }
+
+    .user_page .user_info .balance {
+        padding: 4px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    .user_page .user_info .balance .coins {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #292929;
+        padding: 8px 12px;
+        border-radius: 8px;
+    }
+
+    .user_page .user_info .balance .coins img {
+        height: 28px;
+    }
+
+    .user_page .user_info a {
+        border-radius: 4px;
+        width: 100%;
+        font-size: 22px;
+        color: #fff;
+        padding: 4px;
+        margin: 8px 0px;
+    }
+
+    .user_page .user_info a:hover {
+        background-color: #515151;
+    }
+
+    .subscribe_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 90%;
+        width: 100%;
+    }
+
+    .subscribe_info .user_box {
+        display: flex;
+        padding: 8px;
+        align-items: start;
+        justify-content: start;
+        background-color: #292929;
+        width: 100%;
+        margin-bottom: 16px;
+        border-radius: 12px;
+    }
+
+    .subscribe_info .user_box .user-avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 8px 0px 0px;
+        padding: 8px;
+        width: 64px;
+        height: 64px;
+        background-color: #515151;
+        border-radius: 8px;
+    }
+
+    .subscribe_info .user_box .user-avatar p {
+        font-size: 42px;
+        line-height: 42px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .subscribe_info .user_box .text_box .username{
+        color: #fff;
+        font-size: 28px;
+        font-weight: 500;
+    }
+
+    .subscribe_info .user_box .text_box .status-sub{
+        color: #929292;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .subscribe_info .buy-sub-btn {
+        margin-top: 16px;
+        background-color: #59c33c;
+        width: 100%;
+        height: 80px;
+        border-radius: 12px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    .subscribe_info .user_person_box {
+        position: relative;
+        border-radius: 12px;
+        width: 100%;
+        height: 65%;
+        background-color: #292929;
+    }
+
+    .subscribe_info .user_person_box .edit-person-btn {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        width: 64px;
+        height: 64px;
+        padding: 8px;
+        background-color: #373737;
+        border-radius: 8px;
+    }
+
+    .subscribe_info .user_person_box .edit-person-btn img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .settings_box {
+        border: 2px red solid;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        height: 90%;
+        width: 100%;
+    }
+
+    .settings_box button {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        background-color: #292929;
+        color: #fff;
+        font-weight: 500;
+        font-size: 24px;
+        padding: 16px;
+        border-radius: 8px;
+        margin: 4px 0px;
+    }
+
+    .buy-subscibe_page {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        justify-content: end;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: #00000098;
+    }
+
+    .buy-subscibe_page .buy-subscibe_info {
+        position: relative;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        padding: 24px;
+        border-radius: 16px 16px 0px 0px;
+        width: 100%;
+        background-color: #1c1c1c;
+        z-index: 101;
+    }
+
+    .buy-subscibe_page .buy-subscibe_info .text-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    .buy-subscibe_page .buy-subscibe_info .text-box p {
+        color: #fff;
+        font-weight: 500;
+        font-size: 24px;
+    }
+
+    .buy-subscibe_page .buy-subscibe_info .text-box .coins {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #373737;
+        padding: 8px 12px;
+        border-radius: 8px;
+    }
+
+    .buy-subscibe_page .buy-subscibe_info .text-box .coins img {
+        height: 28px;
+    }
+
+    .buy-subscibe_page .buy-subscibe_info .text-box .coins p {
+        font-size: 24px;
+        color: #fff;
+        font-weight: 500px;
+    }
+
+    .buy-subscibe_page .buy-subscibe_info form a {
+        margin: 8px 0px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        background-color: #373737;
+        color: #fff;
+        font-weight: 500;
+        font-size: 24px;
+    }
+
+    .buy-subscibe_page .buy-subscibe_info form a img{
+        background-color: #515151;
+        border-radius: 4px;
+        padding: 8px;
+        width: 64px;
     }
 }
 
